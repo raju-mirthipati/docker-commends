@@ -1,0 +1,47 @@
+install docker in ec2-server 
+
+docker commends 
+
+--> docker pull <image-name>  [it will pull from image form docker hub]
+
+--> docker create <image-id>  [it will create continer]
+
+--> docker start <continer-id> [it will start the container]
+
+--> docker stop <continer-id>  [it will stop the container] 
+
+--> docker ps  [it will show all running containers]
+
+--> docker ps -a  [it will show all running and deleted containers]
+
+--> docker rm <container-id> [it will delete the container]    
+    
+--> docker rmi <image-id> [it will delete the image] 
+
+--> docker run <image-name>  [it will pull image from docker hub and create container]  
+                                        { docker run = pull + create + start }
+ 
+--> docker run -d -p <port:port> <image-name> [it will attach the internal port to container]   
+ 
+--> docker run -d -p <container-port:host-port> --name <coustom-name> <image-name> [ it will attach the name to container]
+
+--> docker exec -it <conatiner-id> bash  [ it will get into the conatiner]
+
+
+##############
+
+when we want to build our own image then create one Dockerfile 
+docker has separete syntex to create Dockerfile
+- inside the Dockerfile we write like this 
+FROM ubuntu --> [this is refence of ubuntu image as in dockerhub]
+
+to build the image what we write in Dockerfile
+if you want to build your coustom image the path shoud be from dockerfile
+--> docker build -t <dockerhub-url>/<user-name>/<coustom-name>:<version> .
+
+to push the image form local to dockerhub
+--> docker push <user-name>/<coustom-name>:<version>
+
+
+
+
