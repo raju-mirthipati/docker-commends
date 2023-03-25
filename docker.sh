@@ -1,0 +1,1 @@
+for i in cart catalogue mongodb mysql payment ratings shipping user web ; do cd $i ; docker build -t $i:v1 ; cd .. ; docker-compose up -d ; done
