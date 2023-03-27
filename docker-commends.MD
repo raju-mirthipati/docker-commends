@@ -27,6 +27,10 @@ docker commends
 
 --> docker exec -it <conatiner-id> bash  [ it will get into the conatiner]
 
+--> docker logs <container-name> [ it will shows the logs of the container ]
+
+--> docker 
+
 
 
 
@@ -44,17 +48,30 @@ if you want to build your coustom image the path shoud be from dockerfile
 to push the image form local to dockerhub
 
 --> docker push <user-name>/<coustom-name>:<version>
+                             
+                        
 
+--DOCKER VOLUMES--
 
- *docker volumes*
 -> docker containers are ephemeral
 
 -> when we want to create docker image and next we create docker container the container use's the host files system to as a volume 
 
 -> when we want to delete the conatiner all data was deleted 
 
->>>> if we mount the docker volume to the container the data was unbroken <<<<
-<<<formet to attch the docker volume to container>>>
+DOCKER VILUMES ARE TWO TYPES 
+
+1. Named volumes 
+2. Unamed volumes
+
+Named volumes. mainted by docker 
+Unamed volumes. not mainted by docker
+
+
+
+ if we mount the docker volume to the container the data was unbroken 
+
+*formet to attch the docker volume to container*
 
 -> docker volume create <volume-name>
 
@@ -63,5 +80,20 @@ to push the image form local to dockerhub
 -> docker run -d -v <volume-name>:</path/of/mouted/to/the/container> -p <docker-port>:<host-port> <image-name>:<version>
 
 
+DOCKER NETWORK 
+-
+when we want to containers to communicate each other we want to create and attch the networks to the containers in the docker we have 4 types of netwroks is there
+
+1. brige network
+2. overlay networks
+3. multi-host communication
+4. macvlan networks
+
+we are commenly use the brige network's becase of bridge netwrok communicate with the container names
+ *formet to attch the docker volume to netwroks*
+
+ --> docker create netwrok <name>
+ after ceate the netwrok we add the netwrok for the conatiners in this formet
+ --> docker run -d --netwrok <netwrok name> --name <name> <image-name>:<version>
 
 
